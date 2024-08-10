@@ -82,7 +82,7 @@ UserRouter.put('/admin/:id/schedule', async (req, res) => {
     res.json(appointment);
   } catch (error) {
     console.error("Error scheduling appointment:", error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Internal server error'+error });
   }
 });
 

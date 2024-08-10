@@ -111,10 +111,10 @@ const handleBookApt = async (req, res) => {
   } = req.body;
 
   try {
-    const token = req.body.cookie;
-    if(token)
+  
+    if(name)
     {
-      const decoded = jwt.verify(token, privateKey);
+    
    
    
     const Appointmentdata = await Appointment.create({

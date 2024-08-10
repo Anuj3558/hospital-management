@@ -54,7 +54,7 @@ UserRouter.put('/admin/:id/schedule', async (req, res) => {
     // Notify via Email
     const mailOptions = {
       from: 'anujmahadik63@gmail.com',
-      to: appointment.bookedBy,
+      to: appointment.email,
       subject: 'Appointment Scheduled',
       text: `Patient Name:${appointment.patientName}\n
              Reason: ${appointment.reason}\n
@@ -99,7 +99,7 @@ UserRouter.put('/admin/:id/cancel', async (req, res) => {
     // Notify via Email
     const mailOptions = {
       from: 'anujmahadik63@gmail.com',
-      to: appointment.bookedBy,
+      to: appointment.email,
       subject: 'Appointment Canceled',
       text: `Patient Name:${appointment.patientName}\n
              Reason: ${appointment.reason}\n

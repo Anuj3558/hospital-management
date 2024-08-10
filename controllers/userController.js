@@ -127,7 +127,7 @@ const handleBookApt = async (req, res) => {
       occupation: occupation,
       appointmentDate: appointmentDate,
       reason: reason,
-      bookedBy:decoded.email,
+      bookedBy:email,
       insurancePolicyNo: insurancePolicy,
       bloodGroup: bloodGroup,
       medicalHistory: medicalHistory,

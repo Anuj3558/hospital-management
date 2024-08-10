@@ -111,7 +111,7 @@ const handleBookApt = async (req, res) => {
   } = req.body;
 
   try {
-    const token = req.cookies._id;
+    const token = req.body.cookie;
     if(token)
     {
       const decoded = jwt.verify(token, privateKey);

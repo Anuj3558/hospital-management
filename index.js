@@ -9,7 +9,7 @@ const app = express();
 const port = 3001;
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: 'https://medipluz.netlify.app', // Allow requests from this origin
   credentials: true, // Allow cookies to be sent
 };
 

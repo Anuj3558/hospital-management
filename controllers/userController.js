@@ -8,6 +8,8 @@ const saltRounds = 10;
 const privateKey = "$$11"; 
 
 // 
+const accountSid = "ACa1b5b99f29831848cbd4071cef477b7b";
+const authToken = "97cee9be5a5b331134d5e55d27e61ad4"
 const client = new twilio(accountSid, authToken);
 console.log(accountSid,authToken)
 const handleRegister = async (req, res) => {

@@ -112,7 +112,7 @@ const handleBookApt = async (req, res) => {
 
   try {
   
-    if(name)
+    if(true)
     {
     
    
@@ -148,7 +148,7 @@ const handleBookApt = async (req, res) => {
   }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'An error occurred while booking the appointment.', error: error.message });
+    res.status(500).json({ message: 'An error occurred while booking the appointment.', error: error});
   }
 };
 const HandleAdmin =async(req,res)=>{

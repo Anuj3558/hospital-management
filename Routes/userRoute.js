@@ -133,17 +133,10 @@ UserRouter.put('/admin/:id/cancel', async (req, res) => {
 
 // Upload a document for an appointment
 UserRouter.post("/upload", async (req, res) => {
-  const { documentType } = req.body;
-  if (!documentType) {
-    return res.status(400).json({ message: 'Document type is required' });
-  }
 
-  if (!req.file) {
-    return res.status(400).json({ message: 'File is required' });
-  }
 
   try {
-    return res.status(200).json({ message: 'File uploaded successfully', document: newDocument });
+    return res.status(200).json({ message: 'File uploaded successfully'});
   } catch (error) {
     console.error("Error uploading file:", error);
     return res.status(500).json({ message: 'Internal server error' });

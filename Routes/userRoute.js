@@ -13,7 +13,13 @@ import nodemailer from 'nodemailer';
 
 // Nodemailer setup
 
-
+const mail = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'anujmahadik63@gmail.com',
+    pass: 'unnlbtcvmzqogpzh',
+  },
+});
 // JWT secret key
 const privateKey = "$$11";
 

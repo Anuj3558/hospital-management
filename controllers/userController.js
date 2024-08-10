@@ -138,11 +138,11 @@ const handleBookApt = async (req, res) => {
     console.log(Appointmentdata);
   
     
-    await client.messages.create({
-      body: `New Appointment ${name} on ${appointmentDate}.`,
-      to: '+918010546419',  
-      from: '+15415694922' 
-    });
+    // await client.messages.create({
+    //   body: `New Appointment ${name} on ${appointmentDate}.`,
+    //   to: '+918010546419',  
+    //   from: '+15415694922' 
+    // });
  
     res.status(200).json({ message: 'Appointment booked successfully!', data: Appointmentdata });
   }

@@ -9,11 +9,11 @@ const app = express();
 const port = 3001;
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: 'https://hospitalmanagement-client.vercel.app/', // Allow requests from this origin
   credentials: true, // Allow cookies to be sent
 };
 
-connectToDb('mongodb://mongo:ohxncbuViWzTGVLbUiTQbqzyhmHdcjXy@viaduct.proxy.rlwy.net:58397');
+connectToDb('mongodb://anujloharkar3557:3558@cluster0-shard-00-00.putip.mongodb.net:27017,cluster0-shard-00-01.putip.mongodb.net:27017,cluster0-shard-00-02.putip.mongodb.net:27017/HospitalMangement?ssl=true&replicaSet=atlas-6dcgli-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0');
 app.use('/uploads', express.static(path.resolve("./uploads")));
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: true }));

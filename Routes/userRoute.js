@@ -8,13 +8,6 @@ import { aptDoc, Appointment } from "../model/AppointmetnModel.js";
 import twilio from "twilio";
 import nodemailer from 'nodemailer';
 
-// Twilio setup
-
-
-// Nodemailer setup
-
-
-// JWT secret key
 const privateKey = "$$11";
 
 // Create Express Router

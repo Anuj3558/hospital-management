@@ -8,8 +8,8 @@ const saltRounds = 10;
 const privateKey = "$$11"; 
 
 // 
-const client = new twilio(accountSid, authToken);
-console.log(accountSid,authToken)
+// const client = new twilio(accountSid, authToken);
+//console.log(accountSid,authToken)
 const handleRegister = async (req, res) => {
   try {
     const { name, email, phone, city, password } = req.body.formData;
@@ -136,11 +136,11 @@ const handleBookApt = async (req, res) => {
     console.log(Appointmentdata);
   
     
-    await client.messages.create({
-      body: `New Appointment ${name} on ${appointmentDate}.`,
-      to: '+918010546419',  
-      from: '+15415694922' 
-    });
+    // await client.messages.create({
+    //   body: `New Appointment ${name} on ${appointmentDate}.`,
+    //   to: '+918010546419',  
+    //   from: '+15415694922' 
+    // });
  
     res.status(200).json({ message: 'Appointment booked successfully!', data: Appointmentdata });
   }

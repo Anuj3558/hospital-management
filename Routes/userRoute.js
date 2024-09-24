@@ -8,6 +8,13 @@ import { aptDoc, Appointment } from "../model/AppointmetnModel.js";
 import twilio from "twilio";
 import nodemailer from 'nodemailer';
 
+// Twilio setup
+
+
+// Nodemailer setup
+
+
+// JWT secret key
 const privateKey = "$$11";
 
 // Create Express Router
@@ -47,7 +54,7 @@ UserRouter.put('/admin/:id/schedule', async (req, res) => {
     // Notify via Email
     const mailOptions = {
       from: 'anujmahadik63@gmail.com',
-      to: appointment.bookedBy,
+      to: appointment.email,
       subject: 'Appointment Scheduled',
       text: `Patient Name:${appointment.patientName}\n
              Reason: ${appointment.reason}\n
@@ -75,7 +82,7 @@ UserRouter.put('/admin/:id/schedule', async (req, res) => {
     res.json(appointment);
   } catch (error) {
     console.error("Error scheduling appointment:", error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Internal server error'+error });
   }
 });
 
@@ -92,7 +99,7 @@ UserRouter.put('/admin/:id/cancel', async (req, res) => {
     // Notify via Email
     const mailOptions = {
       from: 'anujmahadik63@gmail.com',
-      to: appointment.bookedBy,
+      to: appointment.email,
       subject: 'Appointment Canceled',
       text: `Patient Name:${appointment.patientName}\n
              Reason: ${appointment.reason}\n
@@ -126,17 +133,10 @@ UserRouter.put('/admin/:id/cancel', async (req, res) => {
 
 // Upload a document for an appointment
 UserRouter.post("/upload", async (req, res) => {
-  const { documentType } = req.body;
-  if (!documentType) {
-    return res.status(400).json({ message: 'Document type is required' });
-  }
 
-  if (!req.file) {
-    return res.status(400).json({ message: 'File is required' });
-  }
 
   try {
-    return res.status(200).json({ message: 'File uploaded successfully', document: newDocument });
+    return res.status(200).json({ message: 'File uploaded successfully'});
   } catch (error) {
     console.error("Error uploading file:", error);
     return res.status(500).json({ message: 'Internal server error' });

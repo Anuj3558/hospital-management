@@ -8,8 +8,8 @@ const saltRounds = 10;
 const privateKey = "$$11"; 
 
 // 
-// const client = new twilio(accountSid, authToken);
-//console.log(accountSid,authToken)
+const client = new twilio(accountSid, authToken);
+console.log(accountSid,authToken)
 const handleRegister = async (req, res) => {
   try {
     const { name, email, phone, city, password } = req.body.formData;
@@ -109,10 +109,10 @@ const handleBookApt = async (req, res) => {
   } = req.body;
 
   try {
-    const token = req.cookies._id;
-    if(token)
+  
+    if(true)
     {
-      const decoded = jwt.verify(token, privateKey);
+    
    
    
     const Appointmentdata = await Appointment.create({
@@ -125,7 +125,7 @@ const handleBookApt = async (req, res) => {
       occupation: occupation,
       appointmentDate: appointmentDate,
       reason: reason,
-      bookedBy:decoded.email,
+      bookedBy:email,
       insurancePolicyNo: insurancePolicy,
       bloodGroup: bloodGroup,
       medicalHistory: medicalHistory,
@@ -146,7 +146,7 @@ const handleBookApt = async (req, res) => {
   }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'An error occurred while booking the appointment.', error: error.message });
+    res.status(500).json({ message: 'An error occurred while booking the appointment.', error: error});
   }
 };
 const HandleAdmin =async(req,res)=>{

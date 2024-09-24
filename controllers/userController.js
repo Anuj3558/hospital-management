@@ -7,9 +7,9 @@ import twilio from "twilio";
 const saltRounds = 10;
 const privateKey = "$$11"; 
 
-// 
-const client = new twilio(accountSid, authToken);
-console.log(accountSid,authToken)
+// // 
+// const client = new twilio(accountSid, authToken);
+// console.log(accountSid,authToken)
 const handleRegister = async (req, res) => {
   try {
     const { name, email, phone, city, password } = req.body.formData;
